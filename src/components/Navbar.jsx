@@ -18,9 +18,12 @@ export default function Navbar() {
                         <Link to={'/dashboard'}>{user.name}</Link>
                     </div> 
                 </nav>
-            :   <nav className="not-logged-nav-container">
-                    <Link to={'/login'}>Login</Link>
-                    <Link to={'/register'}>Register</Link>
+            :   <nav className="logged-nav-container">
+                    <h2>Bloggy</h2>
+                    <div style={{display: 'flex', gap: "10px", alignItems: 'center'}}>
+                        <button className="create-post-btn" onClick={() => navigate('/login')}>Login</button>
+                        <button className="create-post-btn" onClick={() => navigate('/register')}>Register</button>
+                    </div>
                 </nav>
         }
     </>
